@@ -13,6 +13,9 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.PlayOrder)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
@@ -32,6 +35,9 @@
     {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.PlayOrder)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
@@ -47,8 +53,8 @@
             @Html.DisplayFor(modelItem => item.Rating)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.BoardGameID })
-            @Html.ActionLink("Details", "Details", new { id = item.BoardGameID })
+            @Html.ActionLink("Edit", "Edit", new { id = item.BoardGameID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.BoardGameID }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.BoardGameID })
         </td>
     </tr>

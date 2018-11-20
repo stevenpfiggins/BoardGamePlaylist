@@ -17,6 +17,13 @@
     @Html.HiddenFor(model => model.BoardGameID)
 
     <div class="form-group">
+        @Html.LabelFor(model => model.PlayOrder, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PlayOrder, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PlayOrder, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
         @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })

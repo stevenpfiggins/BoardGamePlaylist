@@ -11,6 +11,7 @@ namespace BoardGamePlaylist_MVC.Models
     {
         [Key]
         public int BoardGameID { get; set; }
+        public int PlayOrder { get; set; }
         public string Name { get; set; }
         public string MainMechanism { get; set; }
         public string Description { get; set; }

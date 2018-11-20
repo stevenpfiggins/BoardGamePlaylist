@@ -15,7 +15,7 @@ namespace BoardGamePlaylist_MVC.Controllers
         // GET: BoardGame
         public ActionResult Index()
         {
-            return View(db.BoardGames.ToList());
+            return View(db.BoardGames.OrderBy(b => b.PlayOrder).ToList());
         }
 
         //GET: BoardGame/Create
@@ -27,7 +27,7 @@ namespace BoardGamePlaylist_MVC.Controllers
         //POST: BoardGame/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BoardGameID,Name,MainMechanism,Description,Weight,Rating")] BoardGame boardGame)
+        public ActionResult Create([Bind(Include = "BoardGameID,PlayOrder,Name,MainMechanism,Description,Weight,Rating")] BoardGame boardGame)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +91,7 @@ namespace BoardGamePlaylist_MVC.Controllers
         //POST: BoardGame/Edit/{id}
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include ="BoardGameID,Name,MainMechanism,Description,Weight,Rating")] BoardGame boardGame)
+        public ActionResult Edit([Bind(Include ="BoardGameID,PlayOrder,Name,MainMechanism,Description,Weight,Rating")] BoardGame boardGame)
         {
             if (ModelState.IsValid)
             {
